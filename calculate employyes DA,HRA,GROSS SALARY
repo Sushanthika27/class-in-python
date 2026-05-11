@@ -1,0 +1,25 @@
+class emp():
+    def __init__(self, emp_id, name, basic_salary):
+        self.name = name
+        self.basic_salary = basic_salary
+        self.emp_id = emp_id
+    def calculate_da(self):
+        return self.basic_salary * 0.10
+    def calculate_hra(self):
+        return self.basic_salary * 0.20
+    def display_details(self):
+        da = self.calculate_da()
+        hra = self.calculate_hra()
+        gross_salary = (self.basic_salary + da + hra)
+        print("\n--- Employee Details ---")
+        print(f"Employee ID   : {self.emp_id}")
+        print(f"Name          : {self.name}")
+        print(f"Basic Salary  :RS {self.basic_salary:,.2f}")
+        print(f"DA (10%)      :RS {da:,.2f}")
+        print(f"HRA (15%)     :RS {hra:,.2f}")
+        print(f"Gross Salary  :RS {gross_salary:,.2f}")
+emp_id = int(input("Enter Employee ID: "))
+name = input("Enter Employee Name: ")
+basic_salary = float(input("Enter Basic Salary: "))
+emp=emp(emp_id,name,basic_salary)
+emp.display_details()
