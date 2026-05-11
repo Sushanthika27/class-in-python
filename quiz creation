@@ -1,0 +1,14 @@
+class InvalidOptionError:
+    pass
+class quiz:
+    def __init__(self):
+        self.questions = ["1.Which is the Largest planet in the world?\nA.Earth B.Mars C.Jupiter","2.5+3=?\nA.8 B.9 C.6","sun rises in?\nA.West B.North C.East"]
+        self.answers=['C','A','C']
+        self.score=0
+    def start_quiz(self):
+        for i in range(len(self.questions)):
+            try:
+                print(self.questions[i])
+                ans=input("Enter A/B/C:")
+                if ans not in ['A','B','C']:
+                    raise InvalidOptionError
