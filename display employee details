@@ -1,0 +1,24 @@
+class Employee:
+    def __init__(self, name, emp_id, department, job_title):
+        self.name = name
+        self.emp_id = emp_id
+        self.department = department
+        self.job_title = job_title
+    def display_details(self):
+        print("\n--- Employee Details ---")
+        print(f"Name       : {self.name}")
+        print(f"ID         : {self.emp_id}")
+        print(f"Department : {self.department}")
+        print(f"Job Title  : {self.job_title}")
+num_employees = int(input("Enter number of employees: "))
+employees = []
+for i in range(num_employees):
+    print(f"\nEnter details for Employee {i + 1}:")
+    name =input("Name: ")
+    emp_id =input("Employee ID: ")
+    department =input("Department: ")
+    job_title =input("Job Title: ")
+    employees.append(Employee(name, emp_id, department, job_title))
+    print("\n===== All Employee Details =====")
+    for emp in employees:
+        emp.display_details()
