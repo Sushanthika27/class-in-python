@@ -1,0 +1,28 @@
+class exceptiondemo:
+    def divide (self):
+        try:
+            a=int(input("Enter a number: "))
+            b=int(input("Enter Divisor: "))
+            print(a/b)
+        except zerodivisionerror:
+            print("Division by zero  Error")
+        except valueerror:
+            print("Invalid input")
+    def access_list(self):
+        try:
+            lst=[1,2,3]
+            i=int(input("Enter index: "))
+            print(lst[i])
+        except IndexError:
+            print("Index out of range")
+    def access_dict(self):
+        try:
+            d={"a":1,"b":2,"c":3}
+            k=int(input("Enter key: "))
+            print(d[k])
+        except KeyError:
+            print("Key not in dictionary")
+obj=exceptiondemo()
+obj.divide()
+obj.access_list()
+obj.access_dict()
