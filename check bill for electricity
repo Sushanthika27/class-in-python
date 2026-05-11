@@ -1,0 +1,23 @@
+class ElectricityBill:
+     def __init__(self, customer_name, units):
+        self.customer_name = customer_name.strip()
+        self.units = units
+        bill_amount=0
+        if self.units <= 100:
+            bill_amount = self.units * 5
+        elif self.units <= 200:
+            bill_amount = (100 * 1.5) + ((self.units - 100) * 2.5)
+        else:
+            bill_amount = (100 * 1.5) + (100 * 2.5) + ((self.units - 200) * 4)
+        return bill_amount
+     def display_bill(self):
+        bill_amount = self.calculate_bill()
+        print("\n--- Electricity Bill ---")
+        print(f"Customer Name : {self.customer_name}")
+        print(f"Units Consumed: {self.units}")
+        print(f"Total Amount  : ₹{bill_amount:.2f}")
+name = input("Enter customer name: ")
+units_input = input("Enter units consumed: ")
+units = input(units_input)
+bill = ElectricityBill(name, units)
+bill.display_bill()
