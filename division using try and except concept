@@ -1,0 +1,21 @@
+def safe_division():
+    try:
+        num1 = input("Enter numerator: ")
+        num2 = input("Enter denominator: ")
+        num1 = float(num1)
+        num2 = float(num2)
+        result = num1 / num2
+
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+    except ValueError:
+        print("Error: Please enter valid numeric values.")
+    except TypeError:
+        print("Error: Incompatible types for division.")
+    except OverflowError:
+        print("Error: Number too large to handle.")
+    else:
+        print(f"Result: {result}")
+    finally:
+        print("Division operation attempted.")
+safe_division()
